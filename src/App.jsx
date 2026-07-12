@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Music, Headphones, BarChart3, Library, Palette, Download, Coffee, ChevronDown, Play, ArrowRight } from 'lucide-react'
+import { Music, Headphones, BarChart3, Library, Palette, Download, Coffee, ChevronDown, Play, ArrowRight, Image } from 'lucide-react'
+import './App.css'
 
 function Github({ size = 24, ...props }) {
   return (
@@ -9,7 +10,6 @@ function Github({ size = 24, ...props }) {
     </svg>
   )
 }
-import './App.css'
 
 const features = [
   { icon: <Music size={28} />, title: 'YouTube Music', desc: 'Search and stream any song from YouTube Music with built-in audio streaming.' },
@@ -20,49 +20,12 @@ const features = [
   { icon: <Play size={28} />, title: 'Auto Updates', desc: 'Stay up to date with built-in update notifications.' },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-  }),
-}
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.08 } },
-}
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-}
-
-const wordReveal = {
-  hidden: { opacity: 0, y: 30, rotateX: -40 },
-  visible: (i) => ({
-    opacity: 1, y: 0, rotateX: 0,
-    transition: { duration: 0.7, delay: 0.2 + i * 0.12, ease: [0.22, 1, 0.36, 1] },
-  }),
-}
-
 function FloatingOrbs() {
   return (
     <div className="floating-orbs">
-      <motion.div
-        className="orb orb-1"
-        animate={{ x: [0, 30, -20, 0], y: [0, -40, 20, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="orb orb-2"
-        animate={{ x: [0, -25, 35, 0], y: [0, 30, -25, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="orb orb-3"
-        animate={{ x: [0, 20, -30, 0], y: [0, -20, 35, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      <motion.div className="orb orb-1" animate={{ x: [0, 30, -20, 0], y: [0, -40, 20, 0] }} transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }} />
+      <motion.div className="orb orb-2" animate={{ x: [0, -25, 35, 0], y: [0, 30, -25, 0] }} transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }} />
+      <motion.div className="orb orb-3" animate={{ x: [0, 20, -30, 0], y: [0, -20, 35, 0] }} transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }} />
     </div>
   )
 }
@@ -72,58 +35,37 @@ function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
-    <motion.nav
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className="nav-inner">
-        <a href="#" className="nav-brand">
-          <span>CODAH <b>MUSIC</b></span>
-        </a>
-        <div className="nav-links">
-          <motion.a href="#features" whileHover={{ y: -1 }} transition={{ duration: 0.15 }}>Features</motion.a>
-          <motion.a href="#download" whileHover={{ y: -1 }} transition={{ duration: 0.15 }}>Download</motion.a>
-          <motion.a
-            href="https://github.com/coder-nishanth/codah-music"
-            target="_blank"
-            rel="noreferrer"
-            whileHover={{ y: -1 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Github size={18} />
-          </motion.a>
-          <motion.a
-            href="https://buymeacoffee.com/coder.nishanth"
-            target="_blank"
-            rel="noreferrer"
-            className="nav-coffee"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Coffee size={16} />
+    <header className={'site-header' + (scrolled ? ' scrolled' : '')}>
+      <div className="header-inner">
+        <a href="#" className="header-brand">CODAH <b>MUSIC</b></a>
+
+        <nav className="header-nav">
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#download">Download</a>
+          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer">
+            <Github size={16} />
+          </a>
+          <a href="https://buymeacoffee.com/coder.nishanth" target="_blank" rel="noreferrer" className="header-cta">
+            <Coffee size={14} />
             Support
-          </motion.a>
-        </div>
+          </a>
+        </nav>
+
+        <a href="https://buymeacoffee.com/coder.nishanth" target="_blank" rel="noreferrer" className="header-cta-mobile">
+          Support
+        </a>
       </div>
-    </motion.nav>
+    </header>
   )
 }
 
 function Hero() {
-  const lines = [
-    ['Your', 'All-in-One'],
-    ['Desktop', 'Music'],
-    ['Experience'],
-  ]
-
   return (
     <section className="hero">
       <div className="hero-bg">
@@ -133,96 +75,38 @@ function Hero() {
         <FloatingOrbs />
       </div>
       <div className="hero-content">
-        <motion.div
-          className="hero-badge"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Free &amp; Open Source
-        </motion.div>
+        <div className="hero-badge">Free &amp; Open Source</div>
 
         <h1 className="hero-title">
-          {lines.map((line, li) => (
-            <span key={li} className="hero-line">
-              {line.map((word, wi) => (
-                <motion.span
-                  key={wi}
-                  className={word === 'Desktop' || word === 'Music' ? 'gradient-text' : ''}
-                  variants={wordReveal}
-                  initial="hidden"
-                  animate="visible"
-                  custom={li * 2 + wi}
-                  style={{ display: 'inline-block', marginRight: '0.3em' }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-          ))}
+          <span className="hero-line">Your All-in-One</span>
+          <span className="hero-line"><span className="gradient-text">Desktop</span> <span className="gradient-text">Music</span></span>
+          <span className="hero-line">Experience</span>
         </h1>
 
-        <motion.p
-          className="hero-sub"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Stream from YouTube Music, browse charts, view synced lyrics,<br />
-          and manage your library — all in one beautiful app.
-        </motion.p>
+        <p className="hero-sub">
+          Stream from YouTube Music, browse charts, view synced lyrics, and manage your library — all in one beautiful app.
+        </p>
 
-        <motion.div
-          className="hero-actions"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <motion.a
-            href="#download"
-            className="btn-primary"
-            whileHover={{ scale: 1.04, boxShadow: '0 8px 40px rgba(108, 99, 255, 0.4)' }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Download size={18} />
-            Download for Windows
-          </motion.a>
-          <motion.a
-            href="https://github.com/coder-nishanth/codah-music"
-            target="_blank"
-            rel="noreferrer"
-            className="btn-secondary"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
-          >
-            <Github size={18} />
-            View Source
-          </motion.a>
-        </motion.div>
+        <div className="hero-actions">
+          <a href="#download" className="btn-primary">
+            <Download size={18} /> Download for Windows
+          </a>
+          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer" className="btn-secondary">
+            <Github size={18} /> View Source
+          </a>
+        </div>
 
-        <motion.div
-          className="hero-platforms"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
+        <div className="hero-platforms">
           <span>Windows 10/11</span>
           <span className="dot" />
           <span>Built with Flutter</span>
           <span className="dot" />
           <span>MIT License</span>
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        className="scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-      >
+      <div className="scroll-indicator">
         <ChevronDown size={24} />
-      </motion.div>
+      </div>
     </section>
   )
 }
@@ -230,43 +114,47 @@ function Hero() {
 function Features() {
   return (
     <section className="features" id="features">
-      <motion.div
-        className="section-header"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="section-header">
         <span className="section-label">Features</span>
         <h2>Everything you need in a <span className="gradient-text">music player</span></h2>
-      </motion.div>
-      <motion.div
-        className="features-grid"
-        variants={stagger}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
-        {features.map((f, i) => (
-          <motion.div
-            key={f.title}
-            className="feature-card"
-            variants={cardVariant}
-            whileHover={{ y: -6, scale: 1.02, boxShadow: '0 12px 40px rgba(108, 99, 255, 0.12)' }}
-            transition={{ duration: 0.25 }}
-          >
-            <motion.div
-              className="feature-icon"
-              whileHover={{ rotate: 10, scale: 1.1 }}
-              transition={{ type: 'spring', stiffness: 400 }}
-            >
-              {f.icon}
-            </motion.div>
+      </div>
+      <div className="features-grid">
+        {features.map((f) => (
+          <div key={f.title} className="feature-card">
+            <div className="feature-icon">{f.icon}</div>
             <h3>{f.title}</h3>
             <p>{f.desc}</p>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
+    </section>
+  )
+}
+
+const screenshots = [
+  { src: '/1.png', alt: 'Player' },
+  { src: '/2.png', alt: 'Lyrics' },
+  { src: '/3.png', alt: 'Charts' },
+  { src: '/4.png', alt: 'Library' },
+  { src: '/5.png', alt: 'Settings' },
+]
+
+function Screenshots() {
+  return (
+    <section className="screenshots" id="screenshots">
+      <div className="section-header">
+        <span className="section-label">Screenshots</span>
+        <h2>See it in <span className="gradient-text">action</span></h2>
+      </div>
+      <div className="screenshots-banner">
+        <div className="screenshots-track">
+          {[...screenshots, ...screenshots, ...screenshots].map((s, i) => (
+            <div key={i} className="screenshot-card">
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -275,119 +163,49 @@ function DownloadSection() {
   return (
     <section className="download-section" id="download">
       <div className="download-bg">
-        <motion.div
-          className="download-glow"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        />
+        <div className="download-glow" />
       </div>
-      <motion.div
-        className="download-content"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="download-content">
         <span className="section-label">Download</span>
         <h2>Get <span className="gradient-text">CODAH MUSIC</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
-        <motion.div
-          className="download-cards"
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.a
-            href="/Codah-Music-Setup-1.0.0.exe"
-            download="Codah-Music-Setup-1.0.0.exe"
-            className="download-card"
-            variants={cardVariant}
-            whileHover={{ y: -6, scale: 1.02, boxShadow: '0 8px 30px rgba(108, 99, 255, 0.15)' }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="download-card-icon">
-              <ArrowRight size={24} />
-            </div>
-            <div>
-              <h3>Installer</h3>
-              <p>Codah-Music-Setup-1.0.0.exe</p>
-            </div>
-          </motion.a>
-          <motion.a
-            href="/codah-music-v1.0.0-windows.zip"
-            download="codah-music-v1.0.0-windows.zip"
-            className="download-card"
-            variants={cardVariant}
-            whileHover={{ y: -6, scale: 1.02, boxShadow: '0 8px 30px rgba(108, 99, 255, 0.15)' }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="download-card-icon">
-              <Download size={24} />
-            </div>
-            <div>
-              <h3>Portable</h3>
-              <p>codah-music-v1.0.0-windows.zip</p>
-            </div>
-          </motion.a>
-        </motion.div>
-        <motion.p
-          className="download-note"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.7 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          Windows SmartScreen warning is expected — click "More info" → "Run anyway"
-        </motion.p>
-      </motion.div>
+        <div className="download-cards">
+          <a href="/Codah-Music-Setup-1.0.0.exe" download="Codah-Music-Setup-1.0.0.exe" className="download-card">
+            <div className="download-card-icon"><ArrowRight size={24} /></div>
+            <div><h3>Installer</h3><p>Codah-Music-Setup-1.0.0.exe</p></div>
+          </a>
+          <a href="/codah-music-v1.0.0-windows.zip" download="codah-music-v1.0.0-windows.zip" className="download-card">
+            <div className="download-card-icon"><Download size={24} /></div>
+            <div><h3>Portable</h3><p>codah-music-v1.0.0-windows.zip</p></div>
+          </a>
+        </div>
+        <div className="smartscreen-notice">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>
+            <strong>Windows SmartScreen?</strong> Click <b>"More info"</b> → <b>"Run anyway"</b>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
 
 function Footer() {
   return (
-    <motion.footer
-      className="footer"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
+    <footer className="footer">
       <div className="footer-inner">
-        <div className="footer-brand">
-          <span>CODAH <b>MUSIC</b></span>
+        <div className="footer-brand">CODAH <b>MUSIC</b></div>
+        <div className="footer-links">
+          <a href="https://github.com/coder-nishanth" target="_blank" rel="noreferrer">Developer</a>
+          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
+          <a href="https://buymeacoffee.com/coder.nishanth" target="_blank" rel="noreferrer"><Coffee size={14} /> Support</a>
         </div>
-        <motion.div
-          className="footer-links"
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {[
-            { href: 'https://github.com/coder-nishanth', label: 'Developer' },
-            { href: 'https://github.com/coder-nishanth/codah-music', label: 'GitHub', icon: <Github size={16} /> },
-            { href: 'https://buymeacoffee.com/coder.nishanth', label: 'Support', icon: <Coffee size={16} /> },
-          ].map((link) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              variants={cardVariant}
-              whileHover={{ y: -2, color: '#6c63ff' }}
-            >
-              {link.icon} {link.label}
-            </motion.a>
-          ))}
-        </motion.div>
         <div className="footer-bottom">
-          <p>Made with Flutter & React</p>
-          <p>MIT License</p>
+          <span>Made with Flutter & React</span>
+          <span>MIT License</span>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   )
 }
 
@@ -397,6 +215,7 @@ function App() {
       <Navbar />
       <Hero />
       <Features />
+      <Screenshots />
       <DownloadSection />
       <Footer />
     </div>
