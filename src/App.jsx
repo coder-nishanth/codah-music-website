@@ -170,11 +170,11 @@ function DownloadSection() {
         <h2>Get <span className="gradient-text">CODAH MUSIC</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
         <div className="download-cards">
-          <a href="/Codah-Music-Setup-1.0.0.exe" download="Codah-Music-Setup-1.0.0.exe" className="download-card">
+          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/CodahMusic-Setup-1.0.0.exe" className="download-card">
             <div className="download-card-icon"><ArrowRight size={24} /></div>
-            <div><h3>Installer</h3><p>Codah-Music-Setup-1.0.0.exe</p></div>
+            <div><h3>Installer</h3><p>CodahMusic-Setup-1.0.0.exe</p></div>
           </a>
-          <a href="/codah-music-v1.0.0-windows.zip" download="codah-music-v1.0.0-windows.zip" className="download-card">
+          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/codah-music-v1.0.0-windows.zip" className="download-card">
             <div className="download-card-icon"><Download size={24} /></div>
             <div><h3>Portable</h3><p>codah-music-v1.0.0-windows.zip</p></div>
           </a>
@@ -182,7 +182,7 @@ function DownloadSection() {
         <div className="smartscreen-notice">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <div>
-            <strong>Windows SmartScreen?</strong> Click <b>"More info"</b> → <b>"Run anyway"</b>
+            <strong>Download blocked?</strong> Click <b>"Keep"</b> or <b>"Show all downloads"</b> in your browser. After install, Windows SmartScreen may show — click <b>"More info"</b> → <b>"Run anyway"</b>
           </div>
         </div>
       </div>
