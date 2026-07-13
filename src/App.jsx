@@ -170,9 +170,9 @@ function DownloadSection() {
         <h2>Get <span className="gradient-text">CODAH MUSIC</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
         <div className="download-cards">
-          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/CodahMusic-Setup-1.0.0.exe" className="download-card">
+          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/Codah-Music-Setup-1.0.0.exe" className="download-card">
             <div className="download-card-icon"><ArrowRight size={24} /></div>
-            <div><h3>Installer</h3><p>CodahMusic-Setup-1.0.0.exe</p></div>
+            <div><h3>Installer</h3><p>Codah-Music-Setup-1.0.0.exe</p></div>
           </a>
           <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/codah-music-v1.0.0-windows.zip" className="download-card">
             <div className="download-card-icon"><Download size={24} /></div>
