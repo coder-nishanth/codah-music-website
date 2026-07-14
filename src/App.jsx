@@ -86,9 +86,7 @@ function Hero() {
           <span className="hero-line">Experience</span>
         </h1>
 
-        <p className="hero-sub">
-          Stream from YouTube Music, browse charts, view synced lyrics, equalize your audio, and import Spotify playlists — all in one beautiful app.
-        </p>
+
 
         <div className="hero-actions">
           <a href="#download" className="btn-primary">
@@ -185,7 +183,7 @@ function DownloadSection() {
         <div className="smartscreen-notice">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           <div>
-            <strong>Download blocked?</strong> Click <b>"Keep"</b> or <b>"Show all downloads"</b> in your browser. After install, Windows SmartScreen may show — click <b>"More info"</b> → <b>"Run anyway"</b>
+            <strong>Blocked?</strong> Click <b>"Keep"</b> in your browser, then <b>"Run anyway"</b> on SmartScreen.
           </div>
         </div>
       </div>
