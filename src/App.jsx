@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Music, Headphones, BarChart3, Library, Palette, Download, Coffee, ChevronDown, Play, ArrowRight, Image } from 'lucide-react'
+import { Music, Headphones, BarChart3, Library, Palette, Download, Coffee, ChevronDown, Play, ArrowRight, Sliders, ListMusic, Keyboard, Link } from 'lucide-react'
 import './App.css'
 
 function Github({ size = 24, ...props }) {
@@ -13,11 +13,14 @@ function Github({ size = 24, ...props }) {
 
 const features = [
   { icon: <Music size={28} />, title: 'YouTube Music', desc: 'Search and stream any song from YouTube Music with built-in audio streaming.' },
-  { icon: <Headphones size={28} />, title: 'Synced Lyrics', desc: 'Real-time synced lyrics with LRCLib & Lyrica providers.' },
+  { icon: <Headphones size={28} />, title: 'Synced Lyrics', desc: 'Real-time synced lyrics powered by LRCLib & Lyrica providers.' },
   { icon: <BarChart3 size={28} />, title: 'Charts', desc: 'Browse Billboard Hot 100, Billboard 200, and Spotify trending charts.' },
-  { icon: <Library size={28} />, title: 'Local Library', desc: 'Play and manage your local audio files with queue and playback controls.' },
+  { icon: <Sliders size={28} />, title: 'Built-in Equalizer', desc: '10-band equalizer with presets and real-time audio adjustments.' },
+  { icon: <ListMusic size={28} />, title: 'Spotify Import', desc: 'Import any Spotify or YouTube Music playlist instantly with our embed scraper.' },
   { icon: <Palette size={28} />, title: 'Dynamic Theming', desc: 'Material 3 dynamic colors extracted from album art with blur effects.' },
-  { icon: <Play size={28} />, title: 'Auto Updates', desc: 'Stay up to date with built-in update notifications.' },
+  { icon: <Library size={28} />, title: 'Local Library', desc: 'Play and manage your local audio files with queue and playback controls.' },
+  { icon: <Keyboard size={28} />, title: 'Keyboard Shortcuts', desc: 'Global shortcuts for play/pause, skip, volume, shuffle, and repeat.' },
+  { icon: <Link size={28} />, title: 'Copy & Share', desc: 'Copy shareable links to any song and share them instantly.' },
 ]
 
 function FloatingOrbs() {
@@ -84,7 +87,7 @@ function Hero() {
         </h1>
 
         <p className="hero-sub">
-          Stream from YouTube Music, browse charts, view synced lyrics, and manage your library — all in one beautiful app.
+          Stream from YouTube Music, browse charts, view synced lyrics, equalize your audio, and import Spotify playlists — all in one beautiful app.
         </p>
 
         <div className="hero-actions">
@@ -170,13 +173,13 @@ function DownloadSection() {
         <h2>Get <span className="gradient-text">CODAH MUSIC</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
         <div className="download-cards">
-          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/Codah-Music-Setup-1.0.0.exe" className="download-card">
+          <a href="./Codah Music v2.0.0 Setup.exe" className="download-card">
             <div className="download-card-icon"><ArrowRight size={24} /></div>
-            <div><h3>Installer</h3><p>Codah-Music-Setup-1.0.0.exe</p></div>
+            <div><h3>Installer</h3><p>Codah Music v2.0.0 Setup.exe</p></div>
           </a>
-          <a href="https://github.com/coder-nishanth/codah-music/releases/latest/download/codah-music-v1.0.0-windows.zip" className="download-card">
+          <a href="./Codah Music Portable v2.0.0.zip" className="download-card">
             <div className="download-card-icon"><Download size={24} /></div>
-            <div><h3>Portable</h3><p>codah-music-v1.0.0-windows.zip</p></div>
+            <div><h3>Portable</h3><p>Codah Music Portable v2.0.0.zip</p></div>
           </a>
         </div>
         <div className="smartscreen-notice">
