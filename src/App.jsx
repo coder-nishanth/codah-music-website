@@ -168,16 +168,16 @@ function DownloadSection() {
       </div>
       <div className="download-content">
         <span className="section-label">Download</span>
-        <h2>Get <span className="gradient-text">CODAH MUSIC</span></h2>
+        <h2>Get <span className="gradient-text">Codah Music</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
         <div className="download-cards">
-          <a href="./Codah Music v2.1.0 Setup.exe" className="download-card">
+          <a href="./Codah Music v2.2.0 Setup.exe" className="download-card">
             <div className="download-card-icon"><ArrowRight size={24} /></div>
-            <div><h3>Installer</h3><p>Codah Music v2.1.0 Setup.exe</p></div>
+            <div><h3>Installer</h3><p>Codah Music v2.2.0 Setup.exe</p></div>
           </a>
-          <a href="./Codah Music Portable v2.1.0.zip" className="download-card">
+          <a href="./Codah Music Portable v2.2.0.zip" className="download-card">
             <div className="download-card-icon"><Download size={24} /></div>
-            <div><h3>Portable</h3><p>Codah Music Portable v2.1.0.zip</p></div>
+            <div><h3>Portable</h3><p>Codah Music Portable v2.2.0.zip</p></div>
           </a>
         </div>
         <div className="smartscreen-notice">
