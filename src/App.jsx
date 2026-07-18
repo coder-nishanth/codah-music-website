@@ -45,13 +45,13 @@ function Navbar() {
   return (
     <header className={'site-header' + (scrolled ? ' scrolled' : '')}>
       <div className="header-inner">
-        <a href="#" className="header-brand">CODAH <b>MUSIC</b></a>
+        <a href="#" className="header-brand">Coda <b>Music</b></a>
 
         <nav className="header-nav">
           <a href="#features">Features</a>
           <a href="#screenshots">Screenshots</a>
           <a href="#download">Download</a>
-          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer">
+          <a href="https://github.com/coder-nishanth/coda-music" target="_blank" rel="noreferrer">
             <Github size={16} />
           </a>
           <a href="https://buymeacoffee.com/coder.nishanth" target="_blank" rel="noreferrer" className="header-cta">
@@ -92,7 +92,7 @@ function Hero() {
           <a href="#download" className="btn-primary">
             <Download size={18} /> Download for Windows
           </a>
-          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer" className="btn-secondary">
+          <a href="https://github.com/coder-nishanth/coda-music" target="_blank" rel="noreferrer" className="btn-secondary">
             <Github size={18} /> View Source
           </a>
         </div>
@@ -168,16 +168,16 @@ function DownloadSection() {
       </div>
       <div className="download-content">
         <span className="section-label">Download</span>
-        <h2>Get <span className="gradient-text">Codah Music</span></h2>
+        <h2>Get <span className="gradient-text">Coda Music</span></h2>
         <p>Free and open source. No ads, no tracking.</p>
         <div className="download-cards">
-          <a href="./Codah Music v2.2.0 Setup.exe" className="download-card">
+          <a href="./Coda Music v2.3.0 Setup.exe" className="download-card">
             <div className="download-card-icon"><ArrowRight size={24} /></div>
-            <div><h3>Installer</h3><p>Codah Music v2.2.0 Setup.exe</p></div>
+            <div><h3>Installer</h3><p>Coda Music v2.3.0 Setup.exe</p></div>
           </a>
-          <a href="./Codah Music Portable v2.2.0.zip" className="download-card">
+          <a href="./Coda Music v2.3.0 Portable.zip" className="download-card">
             <div className="download-card-icon"><Download size={24} /></div>
-            <div><h3>Portable</h3><p>Codah Music Portable v2.2.0.zip</p></div>
+            <div><h3>Portable</h3><p>Coda Music v2.3.0 Portable.zip</p></div>
           </a>
         </div>
         <div className="smartscreen-notice">
@@ -195,10 +195,10 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <div className="footer-brand">CODAH <b>MUSIC</b></div>
+        <div className="footer-brand">Coda <b>Music</b></div>
         <div className="footer-links">
           <a href="https://github.com/coder-nishanth" target="_blank" rel="noreferrer">Developer</a>
-          <a href="https://github.com/coder-nishanth/codah-music" target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
+          <a href="https://github.com/coder-nishanth/coda-music" target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
           <a href="https://buymeacoffee.com/coder.nishanth" target="_blank" rel="noreferrer"><Coffee size={14} /> Support</a>
         </div>
         <div className="footer-bottom">
