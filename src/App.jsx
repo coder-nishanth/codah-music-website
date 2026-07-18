@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <header className={'site-header' + (scrolled ? ' scrolled' : '')}>
       <div className="header-inner">
-        <a href="#" className="header-brand">Coda <b>Music</b></a>
+        <a href="#" className="header-brand">CODA <b>MUSIC</b></a>
 
         <nav className="header-nav">
           <a href="#features">Features</a>
@@ -195,7 +195,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <div className="footer-brand">Coda <b>Music</b></div>
+        <div className="footer-brand">CODA <b>MUSIC</b></div>
         <div className="footer-links">
           <a href="https://github.com/coder-nishanth" target="_blank" rel="noreferrer">Developer</a>
           <a href="https://github.com/coder-nishanth/coda-music" target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
